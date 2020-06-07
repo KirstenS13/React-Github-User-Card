@@ -6,18 +6,28 @@ import CardList from './components/CardList';
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      userInfo: {}
+    };
   }
 
   componentDidMount() {
-    axios.get()
+    axios
+      .get('https://api.github.com/users/KirstenS13')
+      .then(res => {
+        console.log(res);
+        this.setState( {userInfo: res.data} );
+      })
+      .catch(err => {
+        console.log(err);
+      })
   }
 
   render() {
     return (
       <div className="App">
         <h1>Hello, from the App</h1>
-        <CardList />
+        <CardList userInfo={this.state.userInfo} followersUrl={this.state.userInfo.followers_url}/>
       </div>
     )
   }

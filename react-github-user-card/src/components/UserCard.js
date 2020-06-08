@@ -4,7 +4,7 @@ import { Button, Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText } fr
 class UserCard extends React.Component {
     render() {
         return (
-            <Card className="bg-light mb-3" style={{width: '25rem'}}>
+            <Card className="bg-light mb-3" style={{width: '25rem', margin: 'auto'}}>
                 <CardImg className='img-fluid' src={this.props.imgUrl} alt={this.props.name}/>
                 <CardBody className='text-left'>
                     <CardTitle>{this.props.name}</CardTitle>

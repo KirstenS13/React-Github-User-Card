@@ -4,16 +4,16 @@ import { Button, Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText } fr
 class UserCard extends React.Component {
     render() {
         return (
-            <Card>
-                <CardImg src={this.props.imgUrl} alt={this.props.name}/>
-                <CardBody>
+            <Card className="bg-light mb-3" style={{width: '25rem'}}>
+                <CardImg className='img-fluid' src={this.props.imgUrl} alt={this.props.name}/>
+                <CardBody className='text-left'>
                     <CardTitle>{this.props.name}</CardTitle>
                     <CardSubtitle>Username: {this.props.username}</CardSubtitle>
                     <CardText>Location: {this.props.location}</CardText>
                     <CardText>Followers: {this.props.followers}</CardText>
                     <CardText>Following: {this.props.following}</CardText>
                     <CardText>Bio: {this.props.bio}</CardText>
-                    <Button><a href={this.props.profileUrl}>Visit Profile</a></Button>
+                    <Button className='btn-warning'><a href={this.props.profileUrl} style={{color: 'black'}}>Visit Profile</a></Button>
                 </CardBody>
             </Card>
         )

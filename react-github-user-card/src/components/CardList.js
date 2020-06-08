@@ -16,11 +16,11 @@ class CardList extends React.Component {
                     name={this.props.userInfo.name}
                     profileUrl={this.props.userInfo.html_url}
                 />
-                <h3>{this.props.userInfo.login}'s Followers</h3>
-                <div>
+                <h3 style={{padding: '20px'}}>{this.props.userInfo.login}'s Followers</h3>
+                <div className='row row-cols-3 d-flex justify-content-around align-items-center flex-wrap'>
                     {this.props.followers.map(follower => {
                         return (
-                            <FollowerCard follower={follower} />
+                            <FollowerCard follower={follower} key={follower.id}/>
                         )
                     })}
                 </div>

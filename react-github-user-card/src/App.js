@@ -7,21 +7,32 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      userInfo: {}
+      userInfo: {},
+      followers: []
     };
   }
 
   componentDidMount() {
+    //get request for my profile
     axios
       .get('https://api.github.com/users/KirstenS13')
       .then(res => {
         console.log(res);
-        this.setState( {userInfo: res.data} );
+        this.setState( { ...this.state ,userInfo: res.data } );
       })
       .catch(err => {
         console.log(err);
       })
     //get request for followers
+    axios
+      .get('https://api.github.com/users/KirstenS13/followers')
+      .then(res => {
+        console.log(res);
+        this.setState( { ...this.state, followers: res } );
+      })
+      .catch(err => {
+        console.log(err);
+      })
   }
 
   render() {

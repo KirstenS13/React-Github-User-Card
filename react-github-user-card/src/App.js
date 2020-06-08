@@ -28,7 +28,7 @@ class App extends React.Component {
       .get('https://api.github.com/users/KirstenS13/followers')
       .then(res => {
         console.log(res);
-        this.setState( { ...this.state, followers: res } );
+        this.setState( { ...this.state, followers: res.data } );
       })
       .catch(err => {
         console.log(err);
@@ -39,7 +39,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Hello, from the App</h1>
-        <CardList userInfo={this.state.userInfo} />
+        <CardList userInfo={this.state.userInfo} followers={this.state.followers} />
       </div>
     )
   }

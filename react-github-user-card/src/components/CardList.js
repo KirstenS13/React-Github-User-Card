@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import FollowerCard from './FollowerCard';
 
 class CardList extends React.Component {
     render() {
@@ -16,6 +17,13 @@ class CardList extends React.Component {
                     name={this.props.userInfo.name}
                     profileUrl={this.props.userInfo.html_url}
                 />
+                <div>
+                    {this.props.followers.map(follower => {
+                        return (
+                            <FollowerCard follower={follower} />
+                        )
+                    })}
+                </div>
             </div>
         )
     }

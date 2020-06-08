@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import './App.css';
+//import './App.css';
 import CardList from './components/CardList';
 
 class App extends React.Component {
@@ -38,7 +38,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello, from the App</h1>
+        <h1>The Github User Info Page</h1>
+        <h2>{this.state.userInfo.login}'s Github Info</h2>
         <CardList userInfo={this.state.userInfo} followers={this.state.followers} />
       </div>
     )

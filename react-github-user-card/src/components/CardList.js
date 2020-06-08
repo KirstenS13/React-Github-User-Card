@@ -1,13 +1,12 @@
 import React from 'react';
-import Card from './Card';
+import UserCard from './UserCard';
 import FollowerCard from './FollowerCard';
 
 class CardList extends React.Component {
     render() {
         return (
             <div>
-                <h2>Hello, from the CardList</h2>
-                <Card 
+                <UserCard 
                     imgUrl={this.props.userInfo.avatar_url}
                     bio={this.props.userInfo.bio}
                     location={this.props.userInfo.location}
@@ -17,6 +16,7 @@ class CardList extends React.Component {
                     name={this.props.userInfo.name}
                     profileUrl={this.props.userInfo.html_url}
                 />
+                <h3>{this.props.userInfo.login}'s Followers</h3>
                 <div>
                     {this.props.followers.map(follower => {
                         return (
